@@ -1,14 +1,4 @@
 #!/bin/bash
-
-echo -n "Do you Really Want to Install Frappe Prerequisites [y/n]:"
-read text
-if [ "$text" == "N" ];then
-	echo "Hope You Installed All Prerequisites .....!"
-	exit 0
-elif [ "$text" == "n" ];then
-	echo "Hope You Installed All Prerequisites .....!"
-	exit 0
-elif [ "$text" == "y" ];then
 	sudo apt-get update
 	echo -e "******************* Installing Common properties *******************"
 	sudo apt-get install -y build-essential
@@ -65,11 +55,6 @@ elif [ "$text" == "y" ];then
 	echo -e "********************************************************************"
 	echo "If Some Package is Missing to Install Please Refere ---> https://github.com/frappe/bench#easy-install -y "
 	echo "Thank you .....!"
-else
-	echo "Please Give Proper Input"
-	exit 0
-fi
-
 echo -e "Before Running ERPNext Installation Script Please Add Following Lines in my.cnf at /etc/mysql/my.cnf \n:"
 echo "============================================================================================================\n"
 echo -e "\n[mysqld] \n\ninnodb-file-format=barracuda \ninnodb-file-per-table=1 \ninnodb-large-prefix=1 \ncharacter-set-client-handshake = FALSE  \ncharacter-set-server = utf8mb4 \ncollation-server = utf8mb4_unicode_ci \n\n[mysql] \n\ndefault-character-set = utf8mb4 \n"
