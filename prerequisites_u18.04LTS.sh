@@ -18,6 +18,7 @@
 	echo "Some Time MySQL-Python Shows ERROR So Don't Worry go Ahead ..........."
 	pip install MySQL-python --no-use-wheel
 	pip install ansible
+	sudo apt-get install -y virtualenv
 	echo -e "********************************************************************"
 	echo -e ""
 	echo -e "******************* Installing Web Server Packages *****************"
