@@ -53,6 +53,7 @@
 	sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://archive.mariadb.org/mariadb-10.2.29/repo/ubuntu/ bionic main'
 	sudo apt-get update
 	sudo apt-get install -y mariadb-server-10.2 mariadb-client-10.2
+	sudo wget https://raw.githubusercontent.com/shrikant9867/frappe-erpnext-manual-script/main/settings.cnf  -P /etc/mysql/conf.d/
 	echo -e "********************************************************************"
 	echo "If Some Package is Missing to Install Please Refere ---> https://github.com/frappe/bench#easy-install -y "
 	echo "Thank you .....!"
