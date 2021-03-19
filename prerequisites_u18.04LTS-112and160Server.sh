@@ -54,6 +54,7 @@
 	sudo apt-get update
 	sudo apt-get install -y mariadb-server-10.2 mariadb-client-10.2
 	sudo wget https://raw.githubusercontent.com/shrikant9867/frappe-erpnext-manual-script/main/settings.cnf  -P /etc/mysql/conf.d/
+	sudo service mysql restart
 	echo -e "********************************************************************"
 	echo "If Some Package is Missing to Install Please Refere ---> https://github.com/frappe/bench#easy-install -y "
 	echo "Thank you .....!"
