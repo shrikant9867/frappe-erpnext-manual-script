@@ -1,0 +1,77 @@
+[mysqld]
+
+# GENERAL #
+user                           = mysql
+default-storage-engine         = InnoDB
+socket                         = /var/run/mysqld/mysqld.sock
+#socket                         = /datadisk/mysql/mysql.sock
+#pid-file                       = /datadisk/mysql/mysql.pid
+pid-file                       = /var/run/mysqld/mysqld.pid
+
+# MyISAM #
+key-buffer-size                = 32M
+myisam-recover                 = FORCE,BACKUP
+
+# SAFETY #
+max-allowed-packet             = 800M
+max-connect-errors             = 1000
+max_connections                = 1000
+innodb                         = FORCE
+
+# DATA STORAGE #
+datadir                        = /var/lib/mysql/
+#datadir                        = /datadisk/mysql
+
+# EVENT SCHEDULAR #
+event_scheduler                 = ON
+
+# BINARY LOGGING #
+#log-bin                        = /var/lib/mysql/mysql-bin
+#expire-logs-days               = 14
+#sync-binlog                    = 1
+
+# REPLICATION #
+server-id                      = 1
+
+# CACHES AND LIMITS #
+tmp-table-size                 = 32M
+max-heap-table-size            = 32M
+query-cache-type               = 0
+query-cache-size               = 0
+max-connections                = 1000
+thread-cache-size              = 500
+open-files-limit               = 2048
+table-definition-cache         = 4096
+table-open-cache               = 1024
+
+# INNODB #
+innodb-flush-method            = O_DIRECT
+innodb-log-files-in-group      = 2
+innodb-log-file-size           = 512M
+innodb-flush-log-at-trx-commit = 1
+innodb-file-per-table          = 1
+innodb-buffer-pool-size        = 2G
+innodb-file-format             = barracuda
+innodb-large-prefix            = 1
+innodb_lock_wait_timeout       = 50
+collation-server               = utf8mb4_unicode_ci
+character-set-server           = utf8mb4
+character-set-client-handshake = FALSE
+max_allowed_packet             = 800M
+innodb_io_capacity_max         = 3000
+innodb_io_capacity             = 600
+# LOGGING #
+log-error                      = /var/lib/mysql/mysql-error.log
+log-queries-not-using-indexes  = 0
+slow-query-log                 = 1
+slow-query-log-file            = /var/lib/mysql/mysql-slow.log
+#innodb_force_recovery         = 1
+[mysql]
+default-character-set = utf8mb4
+
+[mysqldump]
+max_allowed_packet=256M
+# BEGIN ANSIBLE MANAGED BLOCK
+# Import all .cnf files from configuration directory
+!includedir /etc/mysql/mariadb.conf.d/
+# END ANSIBLE MANAGED BLOCK
