@@ -50,7 +50,7 @@
 	echo -e ""
 	echo -e "******************Installing  MySQL and DB Packages ****************"
 	sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-	sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://archive.mariadb.org/mariadb-10.2.22/repo/ubuntu/ bionic main'
+	sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.2/ubuntu bionic main'
 	sudo apt-get update
 	sudo apt-get install -y mariadb-server-10.2 mariadb-client-10.2
 	sudo wget https://raw.githubusercontent.com/shrikant9867/frappe-erpnext-manual-script/main/settings.cnf  -P /etc/mysql/conf.d/
