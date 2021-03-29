@@ -7,12 +7,17 @@
 	sudo apt-get install -y curl wget
 	sudo apt-get install -y git-core
 	sudo apt-get install -y libmysqlclient-dev
+	sudo add-apt-repository 'deb http://security.ubuntu.com/ubuntu bionic-security main'
+	sudo apt-get update
+	sudo apt-cache policy libssl1.0-dev
 	sudo apt-get install -y libssl-dev libssl1.0-dev
 	echo -e "********************************************************************"
 	echo -e ""
 	echo -e "******************* Installing Python Common properties & packages **"
 	sudo apt-get install -y python-pip
 	sudo apt-get install -y python3-pymysql
+	sudo add-apt-repository ppa:deadsnakes/ppa
+	sudo apt-get update
 	sudo apt-get install -y python3.6-dev
 	pip install --upgrade setuptools
 	echo "Some Time MySQL-Python Shows ERROR So Don't Worry go Ahead ..........."
@@ -50,7 +55,7 @@
 	echo -e ""
 	echo -e "******************Installing  MySQL and DB Packages ****************"
 	sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-	sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.2.24/ubuntu bionic main'
+	sudo add-apt-repository 'deb [arch=i386,ppc64el,amd64] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.2/ubuntu bionic main'
 	sudo apt-get update
 	sudo apt-get install -y mariadb-server-10.2 mariadb-client-10.2
 	sudo wget https://raw.githubusercontent.com/shrikant9867/frappe-erpnext-manual-script/main/settings.cnf  -P /etc/mysql/conf.d/
