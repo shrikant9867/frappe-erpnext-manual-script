@@ -4,8 +4,8 @@
 user                           = mysql
 default-storage-engine         = InnoDB
 socket                         = /var/run/mysqld/mysqld.sock
-#socket                         = /datadisk/mysql/mysql.sock
-#pid-file                       = /datadisk/mysql/mysql.pid
+#socket                         = /datadisk/mysql/mysqld.sock
+#pid-file                       = /datadisk/mysql/mysqld.pid
 pid-file                       = /var/run/mysqld/mysqld.pid
 
 # MyISAM #
