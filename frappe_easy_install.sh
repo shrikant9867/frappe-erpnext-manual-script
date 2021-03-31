@@ -214,18 +214,18 @@ else
 fi
 echo ""
 echo ""
-bench Version
+bench version
 echo -e "Note: Please Check Frappe and ERPNext version are present or not \nif not please exit from setup by using CTRL+C\n- Contact to Support Team"
 echo ""
 echo -e "**************************** Custom App Downloading ****************************************************"
 echo ""
 for (( i=0; i<$num; i++)); do
   echo -n "************ Installing ${custom_name[$i]} from ${custom_path[$i]} using branch ${custom_branch[$i]} ************"
-  bench get-app --branch ${custom_branch[$i]} ${custom_name[$i]} ${new_url_path[$i]}
+  bench get-app --branch ${custom_branch[$i]} ${custom_name[$i]} ${url_with_path[$i]}
 done
 echo ""
 echo ""
-bench Version
+bench version
 echo -e "Note: Please Check Frappe and ERPNext,Custom app version are present or not \nif not please exit from setup by using CTRL+C\n- Contact to Support Team"
 echo ""
 echo ""
@@ -233,7 +233,7 @@ echo -e "**************************** Creating Sites in DB *********************
 bench new-site $site_name --mariadb-root-password $mysql_root_password --admin-password $admin_password --install-app erpnext
 echo ""
 echo ""
-bench list-app
+bench list-apps
 echo -e "Note: Please Check listinig Frappe and ERPNext Apps are present or not in site \nif not please exit from setup by using CTRL+C\n- Contact to Support Team"
 echo ""
 echo ""
@@ -245,7 +245,7 @@ done
 
 echo ""
 echo ""
-bench list-app
+bench list-apps
 echo -e "Note: Please Check listinig Frappe and ERPNext Apps are present or not in site \nif not please exit from setup by using CTRL+C\n- Contact to Support Team"
 echo ""
 echo ""
