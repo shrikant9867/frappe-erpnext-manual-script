@@ -230,8 +230,8 @@ echo -e "Note: Please Check Frappe and ERPNext,Custom app version are present or
 echo ""
 echo ""
 echo -e "**************************** Creating Sites in DB ****************************************************"
-bench new-site $site_name --mariadb-root-password $mysql_root_password --admin-password $admin_password --install-app erpnext
-bench use $site_name
+bench new-site ${site_name} --mariadb-root-password $mysql_root_password --admin-password $admin_password --install-app erpnext
+bench use ${site_name}
 echo ""
 echo ""
 bench list-apps
