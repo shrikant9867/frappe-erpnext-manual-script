@@ -55,9 +55,9 @@ while true; do
                 echo "";
                 read -p "Enter the bench branch -->" bench_branch;
                 echo "";
-                read -p "Enter username: -->"username_bench;
+                read -p "Enter username: -->" username_bench;
                 echo "";
-                read -p "Enter password: -->"password_bench;
+                read -p "Enter password: -->" password_bench;
                 echo "";
                 replace_key_bench="://"
                 new_string_bench="://"$username_bench":"$password_bench"@";
