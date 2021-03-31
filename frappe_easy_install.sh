@@ -286,3 +286,4 @@ else
     echo -e " - Hit localhost:8000 on browser.\n - bench start fails try bench serve --port 8081"
     echo -e "********************* Running Application on bench start *************"
     bench start
+fi
