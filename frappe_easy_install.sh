@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#export $(egrep -v '^#' .env | xargs)
 ############################################# Function Area #####################################
 custom_installation(){
     custom_name=() #declare an array outside the scope of loop
