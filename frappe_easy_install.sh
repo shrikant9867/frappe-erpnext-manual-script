@@ -251,7 +251,7 @@ echo -e "Note: Please Check listinig Frappe and ERPNext Apps are present or not 
 echo ""
 echo ""
 
-if [ "ans4" == "y" ];
+if [ "$ans4" == "y" ];
 then
     ########################### commman site json update with port wise ##############################
     sed -i "s|8000|${web_port}|g" sites/common_site_config.json
