@@ -239,9 +239,9 @@ echo -e "Note: Please Check listinig Frappe and ERPNext Apps are present or not 
 echo ""
 echo ""
 
-for (( i=0; i<$num; i++)); do
+for (( app=0; app<$num; app++)); do
   echo -e "************** Installing Custom App in site ***************************"
-  bench install-app ${custom_app_name[$i]}
+  bench install-app ${custom_app_name[$app]}
 done
 
 echo ""
