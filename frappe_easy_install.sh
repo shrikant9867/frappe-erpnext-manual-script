@@ -240,8 +240,8 @@ echo ""
 echo ""
 
 for (( app=0; app<$num; app++)); do
-  echo -e "************** Installing Custom App in site ***************************"
-  bench install-app ${custom_app_name[$app]}
+  echo -e "************** Installing ${custom_name[$app]} App in site ***************************"
+  bench install-app ${custom_name[$app]}
 done
 
 echo ""
