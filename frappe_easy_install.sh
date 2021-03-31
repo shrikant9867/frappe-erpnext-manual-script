@@ -139,7 +139,7 @@ while true; do
             echo "";
             ans4=y;
             break;;
-    [Nn]* ) ans4=n;
+    [Nn]* ) ans4=n; break;;
   esac
 done
 
