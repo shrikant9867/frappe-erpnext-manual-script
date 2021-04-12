@@ -7,7 +7,10 @@
 	sudo apt-get install -y curl wget
 	sudo apt-get install -y git-core
 	sudo apt-get install -y libmysqlclient-dev
-	sudo apt-get install -y libssl-dev libssl1.0-dev
+	sudo add-apt-repository 'deb http://security.ubuntu.com/ubuntu bionic-security main'
+	sudo apt-get update
+	sudo apt-cache policy libssl1.0-dev
+	sudo apt-get install -y libssl1.0-dev
 	echo -e "********************************************************************"
 	echo -e ""
 	echo -e "******************* Installing Python Common properties & packages **"
