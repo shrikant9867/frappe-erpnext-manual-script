@@ -16,7 +16,9 @@
 	echo -e "******************* Installing Python Common properties & packages **"
 	sudo apt-get install -y python-pip
 	sudo apt-get install -y python3-pymysql
-	sudo apt-get install -y python3.6-dev
+	sudo add-apt-repository ppa:deadsnakes/ppa
+	sudo apt-get update
+	sudo apt-get install -y python3.6-dev python3.7-dev python3.8-dev
 	pip install --upgrade setuptools
 	echo "Some Time MySQL-Python Shows ERROR So Don't Worry go Ahead ..........."
 	pip install MySQL-python --no-use-wheel
