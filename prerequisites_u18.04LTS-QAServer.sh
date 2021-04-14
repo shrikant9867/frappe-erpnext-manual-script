@@ -55,15 +55,13 @@
 	echo -e ""
 	echo -e "******************Installing  MySQL and DB Packages ****************"
 	sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-	sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://archive.mariadb.org/mariadb-10.2.29/repo/ubuntu/ bionic main'
+	sudo add-apt-repository 'deb [arch=i386,ppc64el,amd64] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.2/ubuntu bionic main'
 	sudo apt-get update
 	sudo apt-get install -y mariadb-server-10.2 mariadb-client-10.2
 	sudo wget https://raw.githubusercontent.com/shrikant9867/frappe-erpnext-manual-script/main/settings.cnf  -P /etc/mysql/conf.d/
 	sudo service mysql restart
 	echo -e "********************************************************************"
-	echo "If Some Package is Missing to Install Please Refere ---> https://github.com/frappe/bench#easy-install -y "
 	echo "Thank you .....!"
-echo -e "Before Running ERPNext Installation Script Please Add Following Lines in my.cnf at /etc/mysql/my.cnf \n:"
 echo "============================================================================================================\n"
-echo -e "\n[mysqld] \n\ninnodb-file-format=barracuda \ninnodb-file-per-table=1 \ninnodb-large-prefix=1 \ncharacter-set-client-handshake = FALSE  \ncharacter-set-server = utf8mb4 \ncollation-server = utf8mb4_unicode_ci \n\n[mysql] \n\ndefault-character-set = utf8mb4 \n"
+echo -e " Prerequisites Installation Completed....."
 echo -e "============================================================================================================\n"
