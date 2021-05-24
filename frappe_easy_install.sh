@@ -38,7 +38,13 @@ custom_installation(){
 echo -e "*************** Frappe Installation ***********************************************"
 echo ""
 echo ""
+
 # Take inputs at Initial Level
+echo -e "*************** Please select you setup Preference ***************"
+echo "";
+echo "";
+echo -e "Please Select Version for Setup: \n1.Version-13\n2.Version-13-beta\n3.Version-12\n4.Version-12-beta\n5.Custom Repo Setup"
+read version
 echo -e "*************** Please provide Correct Data for Setup Completion ******************"
 echo "";
 echo -n "Please Enter Python Version (2.7/3.6/3.7/3.8) -->"
@@ -177,9 +183,6 @@ if [ "$ans1" == 'y' ];
 then
         echo -e "************ Git Clone Bench-repo $bench_path ************"
         git clone -b $bench_branch $new_url_path_bench bench-repo
-else
-        echo -e "************ Git Clone Bench-repo https://github.com/frappe/bench ************"
-        git clone -b master https://github.com/frappe/bench bench-repo
 fi
 
 pip install -e bench-repo
@@ -192,9 +195,6 @@ if [ "$ans2" == 'y' ];
 then
         echo "************ Installing Frappe-bench from $frappe_app_path using branch $frappe_app_branch ************"
         bench init --frappe-branch $frappe_app_branch --frappe-path $new_url_path_frappe frappe-bench
-else
-        echo "************ Installing Frappe-bench from https://github.com/frappe/frappe using branch master ********"
-        bench init --frappe-branch master frappe-bench
 fi
 
 cd frappe-bench
@@ -208,9 +208,6 @@ if [ "$ans3" == 'y' ];
 then
         echo -n "************ Installing ERPNext from $erpnext_app_path using branch $erpnext_app_branch ************"
         bench get-app --branch $erpnext_app_branch erpnext $new_url_path_erpnext
-else
-        echo "************ Installing ERPNext from https://github.com/frappe/erpnext using branch master ********"
-        bench get-app erpnext --branch master erpnext https://github.com/frappe/erpnext.git
 fi
 echo ""
 echo ""
