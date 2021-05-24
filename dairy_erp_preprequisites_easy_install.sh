@@ -6,9 +6,9 @@ while true; do
     read -p "Do You Want to install installed Frappe prerequisite(y:N) -->" yn
     echo "";
     case $yn in
-        [Yy]* ) echo -e "Warning: prerequisite all supported package will installed like mysql,nodejs and python. \n If you already installed mysql then abort the 					operation and restart";
-        		wget -O - https://raw.githubusercontent.com/shrikant9867/frappe-erpnext-manual-script/main/prerequisites_u18.04LTS-71Server.sh | bash
-
+        [Yy]* ) echo -e "Warning: prerequisite all supported package will installed like mysql,nodejs and python. \n If you already installed mysql then abort the 	operation and restart";
+        		    wget -O - https://raw.githubusercontent.com/shrikant9867/frappe-erpnext-manual-script/main/prerequisites_u18.04LTS-71Server.sh | bash;
+                break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
